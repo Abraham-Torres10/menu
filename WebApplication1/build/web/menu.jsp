@@ -3,19 +3,16 @@
     Created on : 15 oct. 2024, 13:10:02
     Author     : Usuario
 --%>
-<%@page import ="org.abraham.model1.MenuLogica"%>
+<%@page import ="org.abraham.model.MenuLogica"%>
 <%@page import ="java.util.List"%>
-<%@page import ="org.abraham.model1.MenuModelo"%>
+<%@page import ="org.abraham.model.MenuModelo"%>
 
 <%
     String param1 = request.getParameter("param1");
-    List<MenuModelo>list = new MenuLogica().getMenuAdmin();
+    List<MenuModelo>list = new MenuLogica().getMenuAdmin(param1);
     StringBuilder stringBuilder = null;
 %>
-    
-
         <ul class ="nav">
-            
             <%
                 for (MenuModelo menuModelo : list){
                     stringBuilder = new StringBuilder();
